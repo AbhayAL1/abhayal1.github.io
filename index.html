@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay A L | Cybersecurity Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0e17;
+            --secondary-dark: #121a2b;
+            --accent-blue: #3a86ff;
+            --accent-cyan: #00f5d4;
+            --accent-purple: #8338ec;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(10, 14, 23, 0.9), rgba(10, 14, 23, 0.9)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(58, 134, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(58, 134, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            opacity: 0.3;
+        }
+        
+        .cyber-pulse {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(58, 134, 255, 0.2) 0%, rgba(58, 134, 255, 0) 70%);
+            animation: pulse 6s infinite ease-out;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-info a:hover {
+            color: var(--text-primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(58, 134, 255, 0.3);
+        }
+        
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+        
+        .card {
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(58, 134, 255, 0.1);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+        }
+        
+        .card-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .card-body ul {
+            padding-left: 1.5rem;
+        }
+        
+        .card-body li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        
+        .card-body li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--accent-blue);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: var(--secondary-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(58, 134, 255, 0.1);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background-color: rgba(58, 134, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: rgba(58, 134, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(58, 134, 255, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .project-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: rgba(0, 245, 212, 0.1);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cert-card {
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent-purple);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(131, 56, 236, 0.1);
+        }
+        
+        .cert-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .cert-issuer {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid var(--success);
+        }
+        
+        .achievement-card.warning {
+            border-left-color: var(--warning);
+        }
+        
+        .achievement-card.danger {
+            border-left-color: var(--danger);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.1);
+        }
+        
+        .achievement-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .achievement-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: var(--secondary-dark);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-grid, .certifications-container, .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="cyber-grid"></div>
+        <div class="cyber-pulse" style="top: 20%; left: 70%;"></div>
+        <div class="cyber-pulse" style="top: 60%; left: 30%; animation-delay: 2s;"></div>
+        <div class="container hero-content">
+            <h1>Abhay A L</h1>
+            <p class="hero-subtitle">Cybersecurity Expert | Penetration Tester | Security Analyst</p>
+            <div class="contact-info">
+                <a href="mailto:alabhay2@gmail.com"><i class="fas fa-envelope"></i> alabhay2@gmail.com</a>
+                <a href="tel:+917736953966"><i class="fas fa-phone"></i> +91 7736953966</a>
+                <a href="https://linkedin.com/in/abhayal/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/abhayal/</a>
+            </div>
+            <a href="#about" class="btn">Explore My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Cybersecurity professional with hands-on experience in vulnerability assessment, penetration testing, and security monitoring. Passionate about identifying and mitigating security risks to protect digital assets.</p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Professional Summary</h3>
+                        <p class="card-subtitle">Cybersecurity Specialist</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Experienced in conducting comprehensive security assessments and penetration tests</li>
+                        <li>Skilled in identifying vulnerabilities and implementing effective security controls</li>
+                        <li>Proficient with security tools like Splunk, Wazuh, Burp Suite, and Metasploit</li>
+                        <li>Strong understanding of network security, web application security, and ethical hacking</li>
+                        <li>Certified Ethical Hacker (CEH) and Certified SOC Analyst (CSA)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover; background-attachment: fixed;">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My journey in cybersecurity through various roles and responsibilities</p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Verzeo</h3>
+                        <p class="card-subtitle">Cybersecurity Intern</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Engineered and deployed custom cybersecurity tools for vulnerability scanning, improving threat detection accuracy by 20% and strengthening network defenses.</li>
+                        <li>Authored comprehensive security reports, analyzing incident response patterns and system vulnerabilities, driving risk mitigation strategies.</li>
+                        <li>Configured and optimized STEM solutions (Splunk, Snort) for real-time security monitoring, reducing incident response time by 35%.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Techbyheart</h3>
+                        <p class="card-subtitle">Cybersecurity Intern</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Conducted Web Application Penetration Testing (VAPT), uncovering 20+ vulnerabilities and optimizing security controls through manual and automated assessments.</li>
+                        <li>Exploited real-world system vulnerabilities, executing privilege escalation techniques and achieving 80%+ success rate in ethical hacking simulations.</li>
+                        <li>Spearheaded DevSecOps initiatives by integrating CI/CD security automation and IoT protocols, achieving a top 10% ranking in CTF challenges and fortifying system defenses.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Technaghi</h3>
+                        <p class="card-subtitle">Android App Development Intern</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Integrated secure coding practices into Android app development, leading to a 25% reduction in vulnerability exposure and enhanced app performance through modular architecture.</li>
+                        <li>Designed and implemented mobile UI layouts using XML and Android Studio, with robust input validation and session management, boosting both user experience and application security by 40%.</li>
+                        <li>Engineered and deployed a real-world Android application, embedding AES-based encryption for secure data storage and implementing secure authentication protocols, ensuring compliance with OWASP Mobile Top 10 standards.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Tools, technologies, and competencies I've mastered</p>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technologies & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Splunk</span>
+                        <span class="skill-tag">Wazuh</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Zeek</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Nessus</span>
+                        <span class="skill-tag">OSQuery</span>
+                        <span class="skill-tag">Burp Suite</span>
+                        <span class="skill-tag">OWASP ZAP</span>
+                        <span class="skill-tag">Metasploit</span>
+                        <span class="skill-tag">FFUF</span>
+                        <span class="skill-tag">Subfinder</span>
+                        <span class="skill-tag">Amass</span>
+                        <span class="skill-tag">Nmap</span>
+                        <span class="skill-tag">AlienVault OTX</span>
+                        <span class="skill-tag">ServiceNow</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Threat Analysis</span>
+                        <span class="skill-tag">Vulnerability Assessment</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Incident Response</span>
+                        <span class="skill-tag">Cyber Defense</span>
+                        <span class="skill-tag">SIEM Monitoring</span>
+                        <span class="skill-tag">Web App Security</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Bash Scripting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: var(--secondary-dark);">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Hands-on security projects and implementations</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">VAPT Report - E-Commerce Web App</h3>
+                        <p class="project-desc">Documented real-world security flaws including payment bypass and session hijack vulnerabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Penetration Testing</span>
+                            <span class="tech-tag">Web Security</span>
+                            <span class="tech-tag">VAPT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1563770660941-10a63607739e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">WordPress Security & Log Monitoring</h3>
+                        <p class="project-desc">Configured Ubuntu server, deployed hardened WordPress, and set up log monitoring for real-time anomaly detection.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Log Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1985&q=80');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">CyberFox - Cyber Forensic Tool</h3>
+                        <p class="project-desc">Developed a forensic tool to aid digital investigations by extracting evidence from various digital sources.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Digital Forensics</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Evidence Collection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">Professional certifications validating my cybersecurity expertise</p>
+            
+            <div class="certifications-container">
+                <div class="cert-card">
+                    <h3 class="cert-title">Certified Ethical Hacker (CEH)</h3>
+                    <p class="cert-issuer">EC-Council</p>
+                    <p>Validated skills in ethical hacking, penetration testing, and vulnerability assessment.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3 class="cert-title">Certified SOC Analyst (CSA)</h3>
+                    <p class="cert-issuer">EC-Council</p>
+                    <p>Demonstrated proficiency in security operations center monitoring and incident response.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3 class="cert-title">CICSA (Certified IT Infrastructure and Cyber SOC Analyst)</h3>
+                    <p class="cert-issuer">ICT Academy</p>
+                    <p>Validated skills in IT infrastructure security and SOC operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" style="background: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center/cover; background-attachment: fixed;">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <p class="section-subtitle">Notable recognitions and security discoveries</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3 class="achievement-title">10+ NCIIPC Acknowledgements</h3>
+                    <p class="achievement-desc">Received acknowledgements for impactful XSS and security misconfigurations reports.</p>
+                </div>
+                
+                <div class="achievement-card warning">
+                    <h3 class="achievement-title">6+ Bugcrowd Valid Reports</h3>
+                    <p class="achievement-desc">Recognized reports on Bugcrowd platform for various vulnerabilities.</p>
+                </div>
+                
+                <div class="achievement-card danger">
+                    <h3 class="achievement-title">Vulnerabilities Reported</h3>
+                    <p class="achievement-desc">Validated and reported vulnerabilities to NASA, TripAdvisor, Monash University, and Lululemon.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <h3 class="achievement-title">Critical Flaws Identified</h3>
+                    <p class="achievement-desc">Discovered .DS_Store exposure, weak TLS suites, session mismanagement, and clickjacking.</p>
+                </div>
+                
+                <div class="achievement-card warning">
+                    <h3 class="achievement-title">OTP Bypass Discovery</h3>
+                    <p class="achievement-desc">Discovered critical OTP bypass leading to account takeover; delivered full remediation proposal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic background in cybersecurity</p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Rajadhani Institute Of Engineering And Technology</h3>
+                        <p class="card-subtitle">Bachelor of Technology in Cybersecurity</p>
+                    </div>
+                    <div class="card-date">April 2020 - May 2024</div>
+                </div>
+                <div class="card-body">
+                    <p>CGPA: 7.93/10</p>
+                    <h4>Relevant Coursework:</h4>
+                    <ul>
+                        <li>Cybersecurity Fundamentals</li>
+                        <li>Network Security</li>
+                        <li>Security Information and Event Management (SIEM)</li>
+                        <li>Digital Forensics</li>
+                        <li>Cryptography</li>
+                        <li>Intrusion Detection Systems (IDS)</li>
+                        <li>Ethical Hacking and Penetration Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-title">Get In Touch</h2>
+                <p class="footer-subtitle">Interested in discussing cybersecurity projects or opportunities? Feel free to reach out!</p>
+                
+                <div class="social-links">
+                    <a href="mailto:alabhay2@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917736953966"><i class="fas fa-phone"></i></a>
+                    <a href="https://linkedin.com/in/abhayal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+                <p class="copyright">© 2024 Abhay A L. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.card, .skill-category, .project-card, .cert-card, .achievement-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            const animatedElements = document.querySelectorAll('.card, .skill-category, .project-card, .cert-card, .achievement-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Run once on load
+            animateOnScroll();
+            
+            // Floating animation for cyber pulses
+            const pulses = document.querySelectorAll('.cyber-pulse');
+            pulses.forEach((pulse, index) => {
+                pulse.style.animationDelay = `${index * 2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
